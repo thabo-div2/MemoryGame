@@ -23,3 +23,16 @@ body {
 	flex-direction: column;
 	flex-wrap: wrap;
 }
+
+.card {
+	transform: preserve-3d center right;
+	transition: transform 0.8s;
+}
+
+.card.is-flipped {
+	transform: rotateY(-180deg);
+}
+
+.backside {
+	transform: rotateY(180deg);
+}

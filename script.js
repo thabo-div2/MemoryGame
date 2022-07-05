@@ -69,6 +69,8 @@ function createBoard() {
 		const card = document.createElement("img");
 		card.setAttribute("src", "./imgs/blank.png");
 		card.setAttribute("data-id", i);
+		card.classList.add("card");
+		card.classList.toggle("backside");
 		card.addEventListener("click", flipCard);
 
 		gridEl.append(card);
@@ -111,6 +113,8 @@ function checkMatch() {
 
 function flipCard() {
 	const cardId = this.getAttribute("data-id");
+
+	this.classList.toggle("is-flipped");
 
 	cardChosen.push(cardArray[cardId].name);
 	cardsChosenIds.push(cardId);
